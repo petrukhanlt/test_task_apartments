@@ -18,14 +18,14 @@ class Apartment extends Fractal\TransformerAbstract
      *
      * @var array
      */
-    protected $availableIncludes = [];
+    protected array $availableIncludes = [];
 
     /**
      * List of resources to automatically include
      *
      * @var array
      */
-    protected $defaultIncludes = [];
+    protected array $defaultIncludes = [];
 
     public function transform(\App\Models\Apartment $apartment)
     {
