@@ -1,5 +1,6 @@
 <?php
 
+use Database\Seeders\ApartmentsSeeder;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +24,8 @@ class CreateApartmentsTable extends Migration
             $table->integer('garages')->unsigned();
             $table->timestamps();
         });
+
+        (new ApartmentsSeeder())->run();
     }
 
     /**
