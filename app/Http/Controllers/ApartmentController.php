@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ApartmentController extends Controller
 {
@@ -13,7 +15,9 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //
+        $apartments = Apartment::all();
+
+        return response()->collection($apartments, '\App\Transformers\Apartment');
     }
 
     /**
