@@ -32,6 +32,7 @@ class IndexApartmentRequest extends FormRequest
             'garages' => 'nullable|filled|integer|min:1|max:10',
             'price_from' => 'nullable|filled|integer|min:1',
             'price_to' => 'nullable|filled|integer|min:1',
+            'skip' => 'nullable|filled|integer|min:1',
         ];
     }
 }

@@ -25,6 +25,14 @@ class ApartmentController extends Controller
     {
         $query = $this->apartment->query($request->all());
 
+        $count = $query->count();
+
+        if ($request->has('skip')) {
+            $query = $query->offset($request->get('skip'));
+        }
+
+        $query = $query->take(($request->get('count') == 'all') ? $count : $request->get('count', 9));
+
         // returns prepared response with Fractal
         return response()->collection($query->get(), '\App\Transformers\Apartment');
     }
